@@ -34,10 +34,10 @@ function Ideas() {
       <Typography
         sx={{
           fontFamily: "Source Sans Pro, sans-serif",
-          fontSize: {md: "40px", xs: "30px"},
+          fontSize: { md: "40px", xs: "1.75em" },
           fontWeight: "400",
           textAlign: "center",
-          lineHeight: "60px",
+          lineHeight: "1.2em",
           fontStyle: "normal",
           color: "#FFF",
           marginTop: "15px",
@@ -52,22 +52,24 @@ function Ideas() {
           ...DISPLAY_FLEX_ROW,
           ...{
             width: "100vw",
-            paddingTop: "60px",
+            paddingTop: "20px",
             alignItems: "center",
             justifyContent: "center",
             flexDirection: { md: "row", xs: "column" },
+            flexWrap: "wrap"
           },
         }}
       >
-        {IDEAS.map((item) => (
+        {IDEAS.map((item, index) => (
           <Box
+            key={index}
             sx={{
               ...DISPLAY_FLEX_COLUMN,
               ...{
                 paddingTop: "95px",
                 alignItems: "center",
                 justifyContent: "center",
-                marginRight: {md: "70px", xs:"0px"},
+                marginX: "20px",
                 padding: "27px 16px 0px 16px",
               },
             }}
@@ -89,7 +91,7 @@ function Ideas() {
 
             <Box
               sx={{
-                width: "257px",
+                width: "300px",
                 flexShrink: 0,
               }}
             >
@@ -113,8 +115,8 @@ function Ideas() {
 
       <Box
         sx={{
-          width: { md: "1113px", sm: "500px", xs: "250px" },
-          marginTop: {md: "173px", xs: "100px"},
+          width: "60%",
+          marginTop: { md: "173px", xs: "100px" },
           alignItems: "center",
           justifyContent: "center",
         }}

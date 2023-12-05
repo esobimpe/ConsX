@@ -2,10 +2,13 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { TERMS } from "../constants";
 import { DISPLAY_FLEX_COLUMN } from "../style/default";
+import Navbar from "../component/navbar";
+import Footer from "../component/footer";
 
 function Terms() {
   return (
     <>
+    <Navbar/>
       <Box
         sx={{
           ...DISPLAY_FLEX_COLUMN,
@@ -141,6 +144,7 @@ function Terms() {
           </Typography>
         </Box>
       </Box>
+      <Footer />
     </>
   );
 }

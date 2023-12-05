@@ -3,12 +3,13 @@ import React, { useEffect, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { useHistory, useLocation } from "react-router-dom";
-import { Button_Contained, LoginButton } from "../style/button";
+import { ButtonContained } from "../style/button";
 import { DISPLAY_FLEX_ROW, DISPLAY_FLEX_COLUMN } from "../style/default";
 import FormDialog from "./formdialog";
+import LoginButton from "./LoginButton";
 
-const PAGE_TABS = ["Home", "Demos", "Why ConsX", "Blog", "FAQ"];
-const PAGE_TAB_URLS = ["/home", "/demos", "/whyconsx", "/blog", "/faq"];
+const PAGE_TABS = ["Home", "Why Consx", "Blog"];
+const PAGE_TAB_URLS = ["/home", "/why-consx", "/blogs"];
 
 function Navbar() {
   let history = useHistory();
@@ -51,7 +52,6 @@ function Navbar() {
         sx={{
           ...DISPLAY_FLEX_ROW,
           ...{
-            justifyContent: "center",
             width: "80%",
             justifyContent: "space-between",
             alignItems: "center",
@@ -117,6 +117,7 @@ function Navbar() {
           >
             {PAGE_TAB_URLS.map((item, index) => (
               <Box
+                key={index}
                 onClick={() => {
                   setCurrentTab(item);
                   history.push(item);
@@ -172,10 +173,10 @@ function Navbar() {
               },
             }}
           >
-            <LoginButton>Log in</LoginButton>
-            <Button_Contained onClick={handleOpen}>
+            <LoginButton>Member Log in</LoginButton>
+            <ButtonContained onClick={handleOpen}>
               Get Started
-            </Button_Contained>
+            </ButtonContained>
           </Box>
 
           <IconButton
@@ -242,6 +243,7 @@ function Navbar() {
             </Box>
             {PAGE_TAB_URLS.map((item, index) => (
               <Box
+                key={index}
                 sx={{
                   ...DISPLAY_FLEX_ROW,
                   ...{
@@ -250,6 +252,7 @@ function Navbar() {
                   },
                 }}
                 onClick={() => {
+                  setShowDrawerFlag(false);
                   setCurrentTab(item);
                   history.push(item);
                 }}
@@ -269,8 +272,8 @@ function Navbar() {
               </Box>
             ))}
 
-            <LoginButton>Log in</LoginButton>
-            <Button_Contained onClick={handleOpen}>Get Started</Button_Contained>
+            <LoginButton />
+            <ButtonContained onClick={handleOpen}>Get Started</ButtonContained>
           </Box>
         </Box>
       </Drawer>

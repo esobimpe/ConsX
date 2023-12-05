@@ -1,14 +1,119 @@
 import { Box, Dialog, DialogContent, Typography } from "@mui/material";
-import React from "react";
-import { Button_Contained } from "../style/button";
+import React, { useState } from "react";
+import { ButtonContained } from "../style/button";
 import { DISPLAY_FLEX_COLUMN, DISPLAY_FLEX_ROW } from "../style/default";
 import CloseIcon from '@mui/icons-material/Close';
 import "../index.css";
+import ConsX from "./extra/ConsX";
+import PrivacyDialog from "./extra/Privacy";
+
+import { addForm } from "../api/form";
+import toast from "react-hot-toast";
 
 function FormDialog({ open, onClose }) {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    country: "",
+    company: "",
+    dateTime: "",
+    researchMethod: "",
+    comments: "",
+    industry: "",
+    businessSummary: "",
+    businessType: "",
+    objectives: "",
+    competitors: "",
+    timelineBudget: "",
+    consent: false,
+    consentName: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleCheckboxChange = (state) => {
+    setFormData({ ...formData, consent: state });
+    console.log(formData);
+  };
+
+  const handleSubmit = async () => {
+    if (!formData.consent) {
+      toast.error("Please sign the Consent and Privacy");
+      return;
+    }
+    try {
+      const data = await addForm(formData);
+      toast.success(data.message);
+      onClose();
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
   const handleClose = () => {
     onClose();
   };
+
+  const boxStyles = {
+    position: "relative",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "20px",
+    border: "1px solid #4675A5",
+    padding: "34px 21px",
+    gap: "12px",
+    marginBottom: "20px",
+    width: "85%",
+  }
+
+  const inputStyles = {
+    width: "100%",
+    background: "#092038",
+    borderRadius: "8px",
+    border: "none",
+    color: "white",
+    fontFamily: "DM Sans",
+    fontSize: "14px",
+    fontStyle: "normal",
+    fontWeight: "400",
+    lineHeight: "22px",
+    padding: "7.5px",
+  }
+
+  const inputStylesTwo = {
+    color: "white",
+    fontFamily: "DM Sans",
+    fontSize: "14px",
+    fontStyle: "normal",
+    fontWeight: "400",
+    lineHeight: "22px",
+    padding: "7.5px",
+    width: "100%",
+    background: "#092038",
+    borderRadius: "8px",
+    border: "none",
+    resize: "none",
+  }
+
+  const typographyStyles = {
+    position: "absolute",
+    top: "-10px",
+    left: "10px",
+    background: "#0D2946",
+    paddingX: "5px",
+    color: "white",
+    fontFamily: "DM Sans",
+    fontSize: "14px",
+    fontStyle: "normal",
+    fontWeight: "400",
+    lineHeight: "22px",
+    textAlign: "left",
+  }
 
   return (
     <Dialog
@@ -17,7 +122,6 @@ function FormDialog({ open, onClose }) {
           backgroundColor: "transparent",
           boxShadow: "none",
           maxWidth: "960px",
-        //   height: "200vh",
         },
       }}
       BackdropProps={{
@@ -38,7 +142,8 @@ function FormDialog({ open, onClose }) {
           boxShadow: "0px 4px 20px 5px rgba(0, 0, 0, 0.20)",
         }}
       >
-        <CloseIcon sx={{ position:'absolute', right:"20px", color: "white", cursor: 'pointer' }} onClick={onClose} />
+        <CloseIcon sx={{ position: 'absolute', right: "20px", color: "white", cursor: 'pointer' }} onClick={onClose} />
+
         <Box
           sx={{
             ...DISPLAY_FLEX_ROW,
@@ -61,79 +166,19 @@ function FormDialog({ open, onClose }) {
               },
             }}
           >
-            <Box
-              sx={{
-                ...DISPLAY_FLEX_ROW,
-              }}
-            >
-              <Typography
-                sx={{
-                  color: "#D704FF",
-                  fontFamily: "DM Sans",
-                  fontSize: "48px",
-                  fontStyle: "normal",
-                  fontWeight: "700",
-                  lineHeight: "normal",
-                }}
-              >
-                Cons
-              </Typography>
-              <Typography
-                sx={{
-                  color: "#00EFFF",
-                  fontFamily: "DM Sans",
-                  fontSize: "48px",
-                  fontStyle: "normal",
-                  fontWeight: "700",
-                  lineHeight: "normal",
-                }}
-              >
-                X
-              </Typography>
-            </Box>
-            <Typography
-              sx={{
-                color: "#4675A5",
-                fontFamily: "DM Sans",
-                fontSize: "14px",
-                fontStyle: "normal",
-                fontWeight: "700",
-                lineHeight: "22px",
-                paddingBottom: "28px",
-              }}
-            >
-              Automate Your Curiosity Today
-            </Typography>
+            <ConsX />
 
             <Box
               sx={{
                 ...DISPLAY_FLEX_COLUMN,
                 ...{
-                  position: "relative",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: "20px",
-                  border: "1px solid #4675A5",
-                  padding: "34px 21px",
-                  gap: "12px",
-                  marginBottom: "20px",
+                  ...boxStyles
                 },
               }}
             >
               <Typography
                 sx={{
-                  position: "absolute",
-                  top: "-10px",
-                  left: "10px",
-                  background: "#0D2946",
-                  paddingX: "5px",
-                  color: "#4675A5",
-                  fontFamily: "DM Sans",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  lineHeight: "22px",
-                  textAlign: "left",
+                  ...typographyStyles
                 }}
               >
                 Contact Information*
@@ -148,43 +193,27 @@ function FormDialog({ open, onClose }) {
                 }}
               >
                 <input
+                  name="firstName"
+                  onChange={handleInputChange}
                   type="text"
                   placeholder="First Name*"
                   required
                   style={{
+                    ...inputStyles,
                     width: "40%",
-                    background: "#092038",
-                    borderRadius: "8px",
-                    color: "#4675A5",
-                    fontFamily: "DM Sans",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: "400",
-                    padding: "7.5px",
-                    border: "none",
-                    "@::placeholder": {
-                      color: "#4675A5",
-                    },
                   }}
                   className="custom-input"
                 />
 
                 <input
+                  name="lastName"
+                  onChange={handleInputChange}
                   type="text"
                   placeholder="Last Name*"
                   required
                   style={{
-                    width: "40%",
-                    background: "#092038",
-                    borderRadius: "8px",
-                    color: "#4675A5",
-                    border: "none",
-                    fontFamily: "DM Sans",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: "400",
-                    lineHeight: "22px",
-                    padding: "7.5px",
+                    ...inputStyles,
+                    width: "40%"
                   }}
                   className="custom-input"
                 />
@@ -199,21 +228,13 @@ function FormDialog({ open, onClose }) {
                 }}
               >
                 <input
+                  name="email"
+                  onChange={handleInputChange}
                   type="email"
                   placeholder="Email*"
                   required
                   style={{
-                    width: "100%",
-                    background: "#092038",
-                    borderRadius: "8px",
-                    border: "none",
-                    color: "#4675A5",
-                    fontFamily: "DM Sans",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: "400",
-                    lineHeight: "22px",
-                    padding: "7.5px",
+                    ...inputStyles
                   }}
                   className="custom-input"
                 />
@@ -229,41 +250,27 @@ function FormDialog({ open, onClose }) {
                 }}
               >
                 <input
+                  name="phone"
+                  onChange={handleInputChange}
                   type="phone"
                   placeholder="Phone Number*"
                   required
                   style={{
+                    ...inputStyles,
                     width: "50%",
-                    background: "#092038",
-                    borderRadius: "8px",
-                    border: "none",
-                    color: "#4675A5",
-                    fontFamily: "DM Sans",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: "400",
-                    lineHeight: "22px",
-                    padding: "7.5px",
                   }}
                   className="custom-input"
                 />
 
                 <input
+                  name="country"
+                  onChange={handleInputChange}
                   type="text"
                   placeholder="Country/Region"
                   required
                   style={{
+                    ...inputStyles,
                     width: "30%",
-                    background: "#092038",
-                    borderRadius: "8px",
-                    border: "none",
-                    color: "#4675A5",
-                    fontFamily: "DM Sans",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: "400",
-                    lineHeight: "22px",
-                    padding: "7.5px",
                   }}
                   className="custom-input"
                 />
@@ -278,21 +285,51 @@ function FormDialog({ open, onClose }) {
                 }}
               >
                 <input
+                  name="company"
+                  onChange={handleInputChange}
                   type="text"
                   placeholder="Company (if applicable)"
                   required
                   style={{
+                    ...inputStyles
+                  }}
+                  className="custom-input"
+                />
+              </Box>
+            </Box>
+
+
+            <Box
+              sx={{
+                ...DISPLAY_FLEX_COLUMN,
+                ...{
+                  ...boxStyles,
+                },
+              }}
+            >
+              <Typography
+                sx={{
+                  ...typographyStyles
+                }}
+              >
+                Availability*
+              </Typography>
+              <Box
+                sx={{
+                  ...DISPLAY_FLEX_ROW,
+                  ...{
                     width: "100%",
-                    background: "#092038",
-                    borderRadius: "8px",
-                    border: "none",
-                    color: "#4675A5",
-                    fontFamily: "DM Sans",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: "400",
-                    lineHeight: "22px",
-                    padding: "7.5px",
+                    justifyContent: "space-between",
+                  },
+                }}
+              >
+                <input
+                  name="dateTime"
+                  onChange={handleInputChange}
+                  type="datetime-local"
+                  required
+                  style={{
+                    ...inputStyles
                   }}
                   className="custom-input"
                 />
@@ -309,51 +346,13 @@ function FormDialog({ open, onClose }) {
               }}
             >
               <input
-                type="text"
-                placeholder="Target Audience"
-                required
-                style={{
-                  width: "100%",
-                  background: "#092038",
-                  borderRadius: "8px",
-                  border: "none",
-                  color: "#4675A5",
-                  fontFamily: "DM Sans",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  lineHeight: "22px",
-                  padding: "7.5px",
-                }}
-                className="custom-input"
-              />
-            </Box>
-
-            <Box
-              sx={{
-                ...DISPLAY_FLEX_ROW,
-                ...{
-                  width: "100%",
-                  marginBottom: "12px",
-                },
-              }}
-            >
-              <input
+                name="researchMethod"
+                onChange={handleInputChange}
                 type="text"
                 placeholder="Preferred Research Method"
                 required
                 style={{
-                  width: "100%",
-                  background: "#092038",
-                  borderRadius: "8px",
-                  border: "none",
-                  color: "#4675A5",
-                  fontFamily: "DM Sans",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  lineHeight: "22px",
-                  padding: "7.5px",
+                  ...inputStylesTwo
                 }}
                 className="custom-input"
               />
@@ -369,22 +368,13 @@ function FormDialog({ open, onClose }) {
               }}
             >
               <textarea
+                name="comments"
+                onChange={handleInputChange}
                 type="text"
                 placeholder="Additional Comments*"
                 required
                 style={{
-                  width: "100%",
-                  resize: "none",
-                  background: "#092038",
-                  borderRadius: "8px",
-                  border: "none",
-                  color: "#4675A5",
-                  fontFamily: "DM Sans",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  lineHeight: "22px",
-                  padding: "7.5px",
+                  ...inputStylesTwo
                 }}
                 className="custom-input"
               />
@@ -405,32 +395,13 @@ function FormDialog({ open, onClose }) {
               sx={{
                 ...DISPLAY_FLEX_COLUMN,
                 ...{
-                  position: "relative",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: "20px",
-                  border: "1px solid #4675A5",
-                  padding: "23px 33px 23px 23px",
-                  gap: "12px",
-                  marginBottom: "20px",
-                  width: "80%",
+                  ...boxStyles,
                 },
               }}
             >
               <Typography
                 sx={{
-                  position: "absolute",
-                  top: "-10px",
-                  left: "10px",
-                  background: "#0D2946",
-                  paddingX: "5px",
-                  color: "#4675A5",
-                  fontFamily: "DM Sans",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  lineHeight: "22px",
-                  textAlign: "left",
+                  ...typographyStyles
                 }}
               >
                 Business Information*
@@ -444,21 +415,13 @@ function FormDialog({ open, onClose }) {
                 }}
               >
                 <input
+                  name="industry"
+                  onChange={handleInputChange}
                   type="text"
                   placeholder="Industry/Market Segment*"
                   required
                   style={{
-                    width: "100%",
-                    background: "#092038",
-                    borderRadius: "8px",
-                    border: "none",
-                    color: "#4675A5",
-                    fontFamily: "DM Sans",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: "400",
-                    lineHeight: "22px",
-                    padding: "7.5px",
+                    ...inputStyles
                   }}
                   className="custom-input"
                 />
@@ -473,22 +436,13 @@ function FormDialog({ open, onClose }) {
                 }}
               >
                 <textarea
+                  name="businessSummary"
+                  onChange={handleInputChange}
                   type="text"
                   placeholder="Business Idea/Project Summary*"
                   required
                   style={{
-                    width: "100%",
-                    resize: "none",
-                    background: "#092038",
-                    borderRadius: "8px",
-                    border: "none",
-                    color: "#4675A5",
-                    fontFamily: "DM Sans",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: "400",
-                    lineHeight: "22px",
-                    padding: "7.5px",
+                    ...inputStylesTwo
                   }}
                   className="custom-input"
                 />
@@ -505,17 +459,8 @@ function FormDialog({ open, onClose }) {
                 <select
                   type="text"
                   style={{
+                    ...inputStyles,
                     width: "50%",
-                    background: "#092038",
-                    borderRadius: "8px",
-                    border: "none",
-                    color: "#fff",
-                    fontFamily: "DM Sans",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: "400",
-                    lineHeight: "22px",
-                    padding: "7.5px",
                   }}
                 >
                   <option value="1">Startup</option>
@@ -533,22 +478,13 @@ function FormDialog({ open, onClose }) {
               }}
             >
               <textarea
+                name="objectives"
+                onChange={handleInputChange}
                 type="text"
                 placeholder="Research Objectives"
                 required
                 style={{
-                  width: "100%",
-                  resize: "none",
-                  background: "#092038",
-                  borderRadius: "8px",
-                  border: "none",
-                  color: "#4675A5",
-                  fontFamily: "DM Sans",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  lineHeight: "22px",
-                  padding: "7.5px",
+                  ...inputStylesTwo
                 }}
                 className="custom-input"
               />
@@ -564,21 +500,13 @@ function FormDialog({ open, onClose }) {
               }}
             >
               <input
+                name="competitors"
+                onChange={handleInputChange}
                 type="text"
                 placeholder="Competitor Information"
                 required
                 style={{
-                  width: "100%",
-                  background: "#092038",
-                  borderRadius: "8px",
-                  border: "none",
-                  color: "#4675A5",
-                  fontFamily: "DM Sans",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  lineHeight: "22px",
-                  padding: "7.5px",
+                  ...inputStylesTwo
                 }}
                 className="custom-input"
               />
@@ -594,55 +522,19 @@ function FormDialog({ open, onClose }) {
               }}
             >
               <input
+                name="timelineBudget"
+                onChange={handleInputChange}
                 type="text"
                 placeholder="Timeline and Budget*"
                 required
                 style={{
-                  width: "100%",
-                  background: "#092038",
-                  borderRadius: "8px",
-                  border: "none",
-                  color: "#4675A5",
-                  fontFamily: "DM Sans",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  lineHeight: "22px",
-                  padding: "7.5px",
+                  ...inputStylesTwo
                 }}
                 className="custom-input"
               />
             </Box>
 
-            <Box
-              sx={{
-                ...DISPLAY_FLEX_ROW,
-                ...{
-                  width: "100%",
-                  marginBottom: "30px",
-                },
-              }}
-            >
-              <input
-                type="checkbox"
-                style={{
-                  backgroundColor: "#092038",
-                }}
-              />
-              <Typography
-                sx={{
-                  color: "#4675A5",
-                  fontFamily: "DM Sans",
-                  fontSize: "14px",
-                  fontStyle: "normal",
-                  fontWeight: "400",
-                  lineHeight: "22px",
-                  padding: "7.5px",
-                }}
-              >
-                Consent and Privacy*
-              </Typography>
-            </Box>
+            <PrivacyDialog handleCheckboxChange={handleCheckboxChange} handleInputChange={handleInputChange} />
 
             <Box
               sx={{
@@ -654,12 +546,12 @@ function FormDialog({ open, onClose }) {
                 },
               }}
             >
-              <Button_Contained>Request a Demo</Button_Contained>
+              <ButtonContained onClick={handleSubmit}>Request a Demo</ButtonContained>
             </Box>
           </Box>
         </Box>
-      </DialogContent>
-    </Dialog>
+      </DialogContent >
+    </Dialog >
   );
 }
 

@@ -1,9 +1,28 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import { IDEAS } from "../../constants";
 import { DISPLAY_FLEX_COLUMN, DISPLAY_FLEX_ROW } from "../../style/default";
 
 function Mission() {
+  const typographyStyles = {
+    fontFamily: "Source Sans Pro",
+    fontSize: "48px",
+    fontWeight: "700",
+    lineHeight: "normal",
+    fontStyle: "normal",
+    color: "#fff",
+    marginBottom: "8px",
+  };
+
+  const typographyStylesTwo = {
+    fontFamily: "Source Sans Pro",
+    fontSize: "24px",
+    fontWeight: "400",
+    lineHeight: "normal",
+    fontStyle: "normal",
+    color: "#fff",
+    textAlign: "center",
+  }
+
   return (
     <Box
       sx={{
@@ -21,9 +40,8 @@ function Mission() {
           ...DISPLAY_FLEX_ROW,
           ...{
             justifyContent: "flex-start",
-            paddingTop:"100px",
             gap: "100px",
-            flexDirection: {md: 'row', xs: 'column'},
+            flexDirection: { md: 'row', xs: 'column' },
           },
         }}
       >
@@ -40,6 +58,7 @@ function Mission() {
             sx={{
               ...DISPLAY_FLEX_COLUMN,
               ...{
+                alignItems: "center",
                 justifyContent: "center",
                 width: "80%",
                 height: "50%",
@@ -49,13 +68,7 @@ function Mission() {
           >
             <Typography
               sx={{
-                fontFamily: "Source Sans Pro",
-                fontSize: "48px",
-                fontWeight: "700",
-                lineHeight: "normal",
-                fontStyle: "normal",
-                color: "#fff",
-                marginBottom: "8px",
+                ...typographyStyles
               }}
             >
               Our Mission
@@ -63,12 +76,7 @@ function Mission() {
 
             <Typography
               sx={{
-                fontFamily: "Source Sans Pro",
-                fontSize: "24px",
-                fontWeight: "400",
-                lineHeight: "normal",
-                fontStyle: "normal",
-                color: "#fff",
+                ...typographyStylesTwo
               }}
             >
               At ConsX, We Strive to Unleash the Full Potential of Entrepreneurs
@@ -90,14 +98,14 @@ function Mission() {
           sx={{
             ...DISPLAY_FLEX_ROW,
             ...{
-              justifyContent: "flex-start",
+              justifyContent: "center",
             },
           }}
         >
           <img
             alt=""
             style={{
-              width: "100%",
+              width: "60%",
               height: "100%",
               objectFit: "cover",
             }}
@@ -111,9 +119,9 @@ function Mission() {
           ...DISPLAY_FLEX_ROW,
           ...{
             justifyContent: "center",
-            paddingTop:"100px",
+            paddingTop: "100px",
             gap: "100px",
-            flexDirection: {md: 'row', xs: 'column-reverse'}
+            flexDirection: { md: 'row', xs: 'column-reverse' }
           },
         }}
       >
@@ -122,14 +130,14 @@ function Mission() {
             ...DISPLAY_FLEX_ROW,
             ...{
               justifyContent: "center",
-              alignItems:'center'
+              alignItems: 'center'
             },
           }}
         >
           <img
             alt=""
             style={{
-              width: "100%",
+              width: "60%",
               height: "100%",
               objectFit: "cover",
             }}
@@ -143,8 +151,7 @@ function Mission() {
             ...{
               justifyContent: "flex-start",
               alignItems: "center",
-              paddingTop: "100px",
-              paddingLeft:"20px"
+              paddingLeft: "20px"
             },
           }}
         >
@@ -159,13 +166,7 @@ function Mission() {
           >
             <Typography
               sx={{
-                fontFamily: "Source Sans Pro",
-                fontSize: "48px",
-                fontWeight: "700",
-                lineHeight: "normal",
-                fontStyle: "normal",
-                color: "#fff",
-                marginBottom: "8px",
+                ...typographyStyles
               }}
             >
               Why Choose ConsX?
@@ -173,12 +174,7 @@ function Mission() {
 
             <Typography
               sx={{
-                fontFamily: "Source Sans Pro",
-                fontSize: "24px",
-                fontWeight: "400",
-                lineHeight: "normal",
-                fontStyle: "normal",
-                color: "#fff",
+                ...typographyStylesTwo
               }}
             >
               The Driving Force Behind Our Success!
@@ -196,7 +192,7 @@ function Mission() {
           ></Box>
         </Box>
 
-        
+
       </Box>
     </Box>
   );

@@ -54,7 +54,7 @@ function Banner() {
               color: "#00F0FF",
             }}
           >
-            Why ConsX Page
+            Why ConsX
           </Typography>
         </Box>
 
@@ -71,7 +71,7 @@ function Banner() {
         >
           Discover ConsX - Empowering Your Business with Market Intelligence!
         </Typography>
-        
+
       </Box>
     </Box>
   );

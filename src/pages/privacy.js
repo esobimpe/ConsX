@@ -1,11 +1,14 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import { PRIVACY, TERMS } from "../constants";
+import { PRIVACY } from "../constants";
 import { DISPLAY_FLEX_COLUMN } from "../style/default";
+import Navbar from "../component/navbar";
+import Footer from "../component/footer";
 
 function Privacy() {
   return (
     <>
+    <Navbar/>
       <Box
         sx={{
           ...DISPLAY_FLEX_COLUMN,
@@ -41,13 +44,13 @@ function Privacy() {
             <Typography
               sx={{
                 fontFamily: "Source Sans Pro",
-                fontSize: "64px",
                 fontWeight: "700",
                 lineHeight: "44.96px",
                 fontStyle: "normal",
                 color: "#00F0FF",
                 marginBottom: "45px",
               }}
+              fontSize={["2.5em", "4em"]}
             >
               ConsX Privacy Statement
             </Typography>
@@ -71,8 +74,9 @@ function Privacy() {
             </Typography>
           </Box>
 
-          {PRIVACY.map((item) => (
+          {PRIVACY.map((item, index) => (
             <Box
+              key={index}
               sx={{
                 ...DISPLAY_FLEX_COLUMN,
                 ...{
@@ -128,6 +132,7 @@ function Privacy() {
           </Typography>
         </Box>
       </Box>
+      <Footer/>
     </>
   );
 }

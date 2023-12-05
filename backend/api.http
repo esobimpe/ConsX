@@ -1,0 +1,9 @@
+POST https://api.consx.io/auth/register HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Admin",
+    "email": "admin123@gmail.com",
+    "password": "admin123",
+    "role": "0"
+}

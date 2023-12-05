@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import React, {useState} from "react";
-import { Button_Contained } from "../../style/button";
+import React, { useState } from "react";
+import { ButtonContained } from "../../style/button";
 import { DISPLAY_FLEX_COLUMN, DISPLAY_FLEX_ROW } from "../../style/default";
 import FormDialog from "../formdialog";
 
@@ -19,7 +19,7 @@ function Banner() {
     <Box
       sx={{
         width: "100vw",
-        height: "100vh",
+        height: "80vh",
         backgroundColor: "#000000",
         position: "relative",
       }}
@@ -40,7 +40,7 @@ function Banner() {
           ...{
             position: "absolute",
             width: "100vw",
-            paddingTop: "190px",
+            paddingTop: { xs: "50%", sm: "40%", md: "190px" },
             alignItems: "center",
             justifyContent: "center",
           },
@@ -50,15 +50,17 @@ function Banner() {
           sx={{
             ...DISPLAY_FLEX_COLUMN,
             ...{
-              height: "105px",
+              height: "auto",
               justifyContent: "center",
+              padding: "0 20px",
+              textAlign: "center",
             },
           }}
         >
           <Typography
             sx={{
               fontFamily: "Source Sans Pro",
-              fontSize: { md: "64px", sm: "40px", xs: "24px" },
+              fontSize: { xs: "35px", sm: "40px", md: "64px" },
               fontWeight: "700",
               textAlign: "center",
               fontStyle: "normal",
@@ -72,15 +74,17 @@ function Banner() {
           sx={{
             ...DISPLAY_FLEX_COLUMN,
             ...{
-              height: "105px",
+              height: "auto",
               justifyContent: "center",
+              padding: "0 20px",
+              textAlign: "center",
             },
           }}
         >
           <Typography
             sx={{
               fontFamily: "Source Sans Pro",
-              fontSize: { md: "64px", sm: "40px", xs: "24px" },
+              fontSize: { xs: "16px", sm: "24px", md: "40px" },
               fontWeight: 700,
               textAlign: "center",
               fontStyle: "normal",
@@ -96,21 +100,21 @@ function Banner() {
         </Box>
         <Typography
           sx={{
-            width:{md: "1200px"},
+            width: { xs: "90%", sm: "80%", md: "60%" },
             fontFamily: "Source Sans Pro, sans-serif",
-            fontSize: { md: "26px", sm: "16px", xs: "12px" },
+            fontSize: { xs: "12px", sm: "15px", md: "20px" },
             fontWeight: "100",
             textAlign: "center",
             fontStyle: "normal",
             color: "#FFFFFF",
-            padding: "0px 10px",
+            padding: "10px 0",
           }}
         >
           At ConsX, we understand that every dream deserves a chance to soar.
           Our expert team of researchers and strategists is committed to
           unraveling the true potential of your idea. Through data-driven
           methodologies and personalized approaches, we illuminate the most
-          promising opportunities that lie ahead
+          promising opportunities that lie ahead.
         </Typography>
 
         <Box
@@ -118,16 +122,15 @@ function Banner() {
             ...DISPLAY_FLEX_ROW,
             ...{
               justifyContent: "center",
-              margin: "30px 0 10px",
+              margin: "20px 0",
             },
           }}
         >
-          <Button_Contained onClick={handleOpen}>Request Demo</Button_Contained>
+          <ButtonContained onClick={handleOpen}>Request Demo</ButtonContained>
         </Box>
       </Box>
       <FormDialog open={open} onClose={handleClose} />
     </Box>
-    
   );
 }
 
