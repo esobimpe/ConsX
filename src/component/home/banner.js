@@ -67,7 +67,7 @@ function Banner() {
               color: "#ffffff",
             }}
           >
-            Welcome to ConsX
+           Welcome to ConsX Financial Consulting
           </Typography>
         </Box>
         <Box
@@ -95,7 +95,8 @@ function Banner() {
               textShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.7)",
             }}
           >
-            Your Gateway to Market Insights!
+          Your Path to Financial Success Starts Here!
+
           </Typography>
         </Box>
         <Typography
