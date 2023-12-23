@@ -67,7 +67,7 @@ function Banner() {
               color: "#ffffff",
             }}
           >
-           Welcome to ConsX Financial Consulting
+           Welcome to ConsX Financial Consulting & Wealth Management
           </Typography>
         </Box>
         <Box
