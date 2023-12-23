@@ -111,11 +111,14 @@ function Banner() {
             padding: "10px 0",
           }}
         >
-          At ConsX, we understand that every dream deserves a chance to soar.
-          Our expert team of researchers and strategists is committed to
-          unraveling the true potential of your idea. Through data-driven
-          methodologies and personalized approaches, we illuminate the most
-          promising opportunities that lie ahead.
+          ConsX Financial Consulting & Wealth Management is your dedicated ally 
+          in achieving financial success through strategic consulting, effective 
+          wealth management, and the application of advanced quantitative 
+          strategies with a meticulous risk management approach. With our
+          singular focus on personalized service, our seasoned financial consultant 
+          is committed to providing tailored solutions that align with your goals, 
+          whether you're a young professional eager to build wealth or an 
+          individual seeking expert guidance on managing your financial portfolio.
         </Typography>
 
         <Box
@@ -127,7 +130,7 @@ function Banner() {
             },
           }}
         >
-          <ButtonContained onClick={handleOpen}>Request Demo</ButtonContained>
+          <ButtonContained onClick={handleOpen}>Schedule an Appointment</ButtonContained>
         </Box>
       </Box>
       <FormDialog open={open} onClose={handleClose} />
