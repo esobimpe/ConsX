@@ -44,7 +44,7 @@ function Ideas() {
           padding: "0px 20px",
         }}
       >
-        Unravel the Potential of Your Business Idea with ConsX!
+        Comprehensive Financial Guidance and Wealth Management Mastery!
       </Typography>
 
       <Box
