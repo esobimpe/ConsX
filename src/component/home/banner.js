@@ -130,7 +130,7 @@ function Banner() {
             },
           }}
         >
-          <ButtonContained onClick={handleOpen}>Schedule an Appointment</ButtonContained>
+          <ButtonContained onClick={handleOpen}>Schedule an Appointment for just $100</ButtonContained>
         </Box>
       </Box>
       <FormDialog open={open} onClose={handleClose} />
