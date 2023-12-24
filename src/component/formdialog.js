@@ -276,29 +276,6 @@ function FormDialog({ open, onClose }) {
                 />
               </Box>
 
-             /* <Box
-                sx={{
-                  ...DISPLAY_FLEX_ROW,
-                  ...{
-                    width: "100%",
-                  },
-                }}
-              >
-                <input
-                  name="company"
-                  onChange={handleInputChange}
-                  type="text"
-                  placeholder="Company (if applicable)"
-                  required
-                  style={{
-                    ...inputStyles
-                  }}
-                  className="custom-input"
-                />
-              </Box>
-            </Box> */
-
-
             <Box
               sx={{
                 ...DISPLAY_FLEX_COLUMN,
