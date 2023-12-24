@@ -464,6 +464,7 @@ function FormDialog({ open, onClose }) {
                   }}
                 >
                   <option value="1">Financial Consulting</option>
+                  <option value="2">Financial Consulting</option>
                 </select>
               </Box>
             </Box>
