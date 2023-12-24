@@ -31,10 +31,10 @@ function Footer() {
   };
 
   return (
-    /*<Box sx={{ ...DISPLAY_FLEX_ROW, ...{ width: "100vw", backgroundColor: "#021422", justifyContent: "center" } }}>
+    <Box sx={{ ...DISPLAY_FLEX_ROW, ...{ width: "100vw", backgroundColor: "#021422", justifyContent: "center" } }}>
       <Box sx={{ ...DISPLAY_FLEX_COLUMN, ...{ width: "80%", padding: "64px 0px 48px 0px", gap: "64px", justifyContent: "center", alignItems: "center" } }}>
         <Grid container spacing={4} sx={{ ...{ width: "100%", paddingRight: "0px", justifyContent: "space-between", alignItems: "flex-start" } }}>
-          <Grid item xs={12} sm={12} md={6} lg={6}>
+          /*<Grid item xs={12} sm={12} md={6} lg={6}>
             <Box sx={{ ...DISPLAY_FLEX_ROW, ...{ maxWidth: "230px", alignItems: "flex-start", gap: "16px", flex: "1 0 0" } }}>
               <img alt="" src="./images/sightx-new-icon.svg.png" />
               <Box sx={{ ...DISPLAY_FLEX_COLUMN, ...{ maxWidth: "230px", paddingBottom: "0px", alignItems: "flex-start" } }}>
