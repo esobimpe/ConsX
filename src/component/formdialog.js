@@ -276,7 +276,7 @@ function FormDialog({ open, onClose }) {
                 />
               </Box>
 
-              <Box
+             /* <Box
                 sx={{
                   ...DISPLAY_FLEX_ROW,
                   ...{
@@ -296,7 +296,7 @@ function FormDialog({ open, onClose }) {
                   className="custom-input"
                 />
               </Box>
-            </Box>
+            </Box> */
 
 
             <Box
