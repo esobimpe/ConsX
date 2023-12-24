@@ -310,7 +310,7 @@ function FormDialog({ open, onClose }) {
                   ...typographyStyles
                 }}
               >
-                Availability*
+                Availability (Weekends Only)*
               </Typography>
               <Box
                 sx={{
