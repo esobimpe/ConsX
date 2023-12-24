@@ -57,7 +57,7 @@ function Reason() {
           padding: "0px 20px",
         }}
       >
-        Why Choose ConsX for Your Market Research Needs?
+        Why Choose ConsX for Your Financial Consulting and Wealth Management?
       </Typography>
 
       <Box
@@ -151,7 +151,7 @@ function Reason() {
               textAlign: { xs: 'center', md: 'left' },
             }}
           >
-            Ready to Transform Your Idea into Reality?
+            Ready to Transform Your Finances?
           </Typography>
 
           <Typography
@@ -164,7 +164,7 @@ function Reason() {
               textAlign: { xs: 'center', md: 'left' },
             }}
           >
-            Request a Demo Today!
+            Schedule Appointment Today!
           </Typography>
         </Box>
 
