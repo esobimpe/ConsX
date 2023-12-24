@@ -17,7 +17,7 @@ function FormDialog({ open, onClose }) {
     email: "",
     phone: "",
     country: "",
-    company: "",
+    status: "",
     dateTime: "",
     researchMethod: "",
     comments: "",
@@ -275,6 +275,27 @@ function FormDialog({ open, onClose }) {
                   className="custom-input"
                 />
               </Box>
+             <Box
+                sx={{
+                  ...DISPLAY_FLEX_ROW,
+                  ...{
+                    width: "100%",
+                  },
+                }}
+              >
+                <input
+                  name="status"
+                  onChange={handleInputChange}
+                  type="text"
+                  placeholder="Marital Status (if applicable)"
+                  required
+                  style={{
+                    ...inputStyles
+                  }}
+                  className="custom-input"
+                />
+              </Box>
+            </Box> 
 
             <Box
               sx={{
