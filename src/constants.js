@@ -1,19 +1,19 @@
 export const IDEAS = [
   {
     title: "Get Clear on Your Goals",
-    desc: "Let's chat about your money dreams – whether it's saving for that dream vacation, buying a home, or growing your investments. What are your specific financial goals?",
+    desc: "Let's chat about your money dreams – whether it's saving for that dream vacation, buying a home, or growing your investments.",
   },
   {
     title: "Talk to Our Financial Experts",
-    desc: "Our team of friendly financial consultants is here to help. We'll sit down with you (virtually or in person) and take a good look at your finances. No jargon – just a friendly conversation about what matters to you. We'll use some fancy tools and tricks (don't worry, we'll explain everything!) to understand where you stand.",
+    desc: "Our team of friendly financial consultants is here to help. We'll sit down with you (virtually or in person) and take a good look at your finances.",
   },
   {
     title: "Digging into the Numbers",
-    desc: "We're all about the details. We'll gather all the important financial info, using some cool methods to make sure we really get what's going on. It's like detective work, but for your money.",
+    desc: "We're all about the details. We'll gather all the important financial info, using some cool methods to make sure we really get what's going on.",
   },
   {
     title: "Your Personal Financial Map",
-    desc: "Get ready for your customized financial report. We'll break down the numbers, offering insights that make sense. No confusing mumbo-jumbo – just practical advice to help you make the best choices for your money journey. Let's make your financial goals happen!",
+    desc: "Get ready for your customized financial report. We'll break down the numbers, offering insights that make sense.",
   },
 ];
 
