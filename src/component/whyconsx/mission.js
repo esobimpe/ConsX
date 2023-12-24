@@ -79,7 +79,7 @@ function Mission() {
                 ...typographyStylesTwo
               }}
             >
-              At ConsX, We Strive to Unleash the Full Potential of Entrepreneurs
+              At ConsX, Our Mission is to Unlock the Full Financial Potential for Every Client
             </Typography>
           </Box>
 
