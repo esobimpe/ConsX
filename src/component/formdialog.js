@@ -463,7 +463,7 @@ function FormDialog({ open, onClose }) {
                     width: "50%",
                   }}
                 >
-                  <option value="1">Startup</option>
+                  <option value="1">Financial Consulting</option>
                 </select>
               </Box>
             </Box>
