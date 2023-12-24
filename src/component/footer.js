@@ -38,8 +38,8 @@ function Footer() {
             <Box sx={{ ...DISPLAY_FLEX_ROW, ...{ maxWidth: "230px", alignItems: "flex-start", gap: "16px", flex: "1 0 0" } }}>
               <img alt="" src="./images/sightx-new-icon.svg.png" />
               <Box sx={{ ...DISPLAY_FLEX_COLUMN, ...{ maxWidth: "230px", paddingBottom: "0px", alignItems: "flex-start" } }}>
-                <Typography sx={{ color: "#FFF", fontFamily: "Source Sans Pro", fontSize: "20px", fontStyle: "normal", fontWeight: 400, lineHeight: "31.2px" }}>The Future of</Typography>
-                <Typography sx={{ color: "#FFF", fontFamily: "Source Sans Pro", fontSize: "20px", fontStyle: "normal", fontWeight: 400, lineHeight: "31.2px" }}>Financial Consulting and Wealth Management</Typography>
+                <Typography sx={{ color: "#FFF", fontFamily: "Source Sans Pro", fontSize: "20px", fontStyle: "normal", fontWeight: 400, lineHeight: "31.2px" }}>The Future of Financial Consulting and Wealth Management</Typography>
+              
               </Box>
             </Box>
           </Grid>
