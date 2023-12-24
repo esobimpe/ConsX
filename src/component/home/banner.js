@@ -111,14 +111,11 @@ function Banner() {
             padding: "10px 0",
           }}
         >
-          ConsX Financial Consulting & Wealth Management is your dedicated ally 
-          in achieving financial success through strategic consulting, effective 
-          wealth management, and the application of advanced quantitative 
-          strategies with a meticulous risk management approach. With our
-          singular focus on personalized service, our seasoned financial consultant 
-          is committed to providing tailored solutions that align with your goals, 
-          whether you're a young professional eager to build wealth or an 
-          individual seeking expert guidance on managing your financial portfolio.
+          ConsX is your dedicated ally in achieving financial success through strategic consulting, 
+            effective wealth management, and the application of quantitative strategies with a detailed risk management approach. 
+            With our singular focus on personalized service, our seasoned financial consultants are committed to providing tailored 
+            solutions that align with your goals, whether you're a young professional eager to build wealth or an individual seeking 
+            expert guidance on managing your financial portfolio.
         </Typography>
 
         <Box
