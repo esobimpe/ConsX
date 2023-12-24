@@ -20,15 +20,15 @@ export const IDEAS = [
 export const REASONS = [
   {
     title: "Tailored Solutions",
-    desc: "Our research is customized to meet your specific requirements",
+    desc: "Our financial methodology is customized to meet your specific requirements",
   },
   {
     title: "Data-Driven Decisions",
-    desc: "Our seasoned market researchers analyze your concept",
+    desc: "Our seasoned financial strategists analyze your concept using quantitative approach",
   },
   {
-    title: "Data Collection",
-    desc: "Leverage the power of data to make informed business decisions",
+    title: "Risk Management",
+    desc: "We excel in managing risks, ensuring your assets are safeguarded with meticulous care",
   },
   {
     title: "Expert Guidance",
@@ -38,24 +38,24 @@ export const REASONS = [
 
 export const DESCS = [
   {
-    title: "Expert Research Team",
-    desc: "Our team of seasoned researchers boasts a wealth of industry expertise, ensuring accurate and reliable results.",
+    title: "Expert Financial Team",
+    desc: "Our team of seasoned financial experts boasts a wealth of industry expertise, ensuring accurate and reliable results.",
   },
   {
     title: "Tailored Approaches",
-    desc: "We understand that every business idea is unique, and our research methodologies are tailored to suit your specific needs.",
+    desc: "We understand that every financial situation is unique, and our methodologies are tailored to suit your specific needs.",
   },
   {
     title: "Customer-Centric Approach",
-    desc: "Your success is our top priority, and we are committed to delivering unparalleled customer experiences.",
+    desc: "Your financial success is our top priority, and we are committed to delivering unparalleled customer experiences.",
   },
   {
     title: "Actionable Insights",
-    desc: "Our reports are not just data; they are actionable insights that will shape the future of your business.",
+    desc: "Our recommendations are not just data; they are actionable insights that will shape the future of your finances.",
   },
   {
     title: "Confidentiality & Trust",
-    desc: "We handle your ideas with utmost confidentiality, earning your trust at every step of the journey.",
+    desc: "We handle your finances with utmost confidentiality, earning your trust at every step of the journey.",
   },
 ];
 
@@ -80,7 +80,7 @@ export const TEAMS = [
 export const TERMS = [
   {
     title: "1. Services Overview:",
-    desc: "- ConsX provides market research and intelligence services to help businesses make informed decisions.\n - All services offered by ConsX are subject to the terms specified in individual service agreements.",
+    desc: "- ConsX provides market research and intelligence services to help you make informed decisions.\n - All services offered by ConsX are subject to the terms specified in individual service agreements.",
   },
   {
     title: "2. User Conduct:",
@@ -131,7 +131,7 @@ export const TERMS = [
 export const PRIVACY = [
   {
     title: "1. Information We Collect:",
-    desc: "- Personal Information: When you request a demo or use our services, we may collect personal information, such as your name, email address, phone number, company name, and other contact details.\n- Usage Information: We may collect non-personal information, including your IP address, browser type, device information, and website usage data.",
+    desc: "- Personal Information: When you schedule an appointment or use our services, we may collect personal information, such as your name, email address, phone number, and other contact details.\n- Usage Information: We may collect non-personal information, including your IP address, browser type, device information, and website usage data.",
   },
   {
     title: "2. How We Use Your Information:",
