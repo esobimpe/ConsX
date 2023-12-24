@@ -31,7 +31,7 @@ function Footer() {
   };
 
   return (
-    <Box sx={{ ...DISPLAY_FLEX_ROW, ...{ width: "100vw", backgroundColor: "#021422", justifyContent: "center" } }}>
+    /*<Box sx={{ ...DISPLAY_FLEX_ROW, ...{ width: "100vw", backgroundColor: "#021422", justifyContent: "center" } }}>
       <Box sx={{ ...DISPLAY_FLEX_COLUMN, ...{ width: "80%", padding: "64px 0px 48px 0px", gap: "64px", justifyContent: "center", alignItems: "center" } }}>
         <Grid container spacing={4} sx={{ ...{ width: "100%", paddingRight: "0px", justifyContent: "space-between", alignItems: "flex-start" } }}>
           <Grid item xs={12} sm={12} md={6} lg={6}>
@@ -42,7 +42,7 @@ function Footer() {
               
               </Box>
             </Box>
-          </Grid>
+          </Grid>*/
         
           <Grid item xs={12} sm={12} md={12} lg={3}>
             <Box sx={{ ...DISPLAY_FLEX_COLUMN, ...{ alignItems: { lg: "flex-start", md: "center" }, gap: "32px" } }}>
