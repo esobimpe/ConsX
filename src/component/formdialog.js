@@ -402,7 +402,7 @@ function FormDialog({ open, onClose }) {
                   ...typographyStyles
                 }}
               >
-                Business Information*
+                Career Information*
               </Typography>
               <Box
                 sx={{
@@ -416,7 +416,7 @@ function FormDialog({ open, onClose }) {
                   name="industry"
                   onChange={handleInputChange}
                   type="text"
-                  placeholder="Industry/Market Segment*"
+                  placeholder="Current Job*"
                   required
                   style={{
                     ...inputStyles
@@ -437,7 +437,7 @@ function FormDialog({ open, onClose }) {
                   name="businessSummary"
                   onChange={handleInputChange}
                   type="text"
-                  placeholder="Business Idea/Project Summary*"
+                  placeholder="More info (if applicable)"
                   required
                   style={{
                     ...inputStylesTwo
@@ -462,7 +462,6 @@ function FormDialog({ open, onClose }) {
                   }}
                 >
                   <option value="1">Financial Consulting</option>
-                  <option value="2">Financial Consulting</option>
                 </select>
               </Box>
             </Box>
@@ -480,7 +479,7 @@ function FormDialog({ open, onClose }) {
                 name="objectives"
                 onChange={handleInputChange}
                 type="text"
-                placeholder="Research Objectives"
+                placeholder="Financial Goals (if applicable)"
                 required
                 style={{
                   ...inputStylesTwo
@@ -502,7 +501,7 @@ function FormDialog({ open, onClose }) {
                 name="competitors"
                 onChange={handleInputChange}
                 type="text"
-                placeholder="Competitor Information"
+                placeholder="Additional Information"
                 required
                 style={{
                   ...inputStylesTwo
@@ -520,17 +519,7 @@ function FormDialog({ open, onClose }) {
                 },
               }}
             >
-              <input
-                name="timelineBudget"
-                onChange={handleInputChange}
-                type="text"
-                placeholder="Timeline and Budget*"
-                required
-                style={{
-                  ...inputStylesTwo
-                }}
-                className="custom-input"
-              />
+            
             </Box>
 
             <PrivacyDialog handleCheckboxChange={handleCheckboxChange} handleInputChange={handleInputChange} />
