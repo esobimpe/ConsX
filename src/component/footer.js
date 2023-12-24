@@ -39,26 +39,15 @@ function Footer() {
               <img alt="" src="./images/sightx-new-icon.svg.png" />
               <Box sx={{ ...DISPLAY_FLEX_COLUMN, ...{ maxWidth: "230px", paddingBottom: "0px", alignItems: "flex-start" } }}>
                 <Typography sx={{ color: "#FFF", fontFamily: "Source Sans Pro", fontSize: "20px", fontStyle: "normal", fontWeight: 400, lineHeight: "31.2px" }}>The Future of</Typography>
-                <Typography sx={{ color: "#FFF", fontFamily: "Source Sans Pro", fontSize: "20px", fontStyle: "normal", fontWeight: 400, lineHeight: "31.2px" }}>Market Research</Typography>
+                <Typography sx={{ color: "#FFF", fontFamily: "Source Sans Pro", fontSize: "20px", fontStyle: "normal", fontWeight: 400, lineHeight: "31.2px" }}>Financial Consulting and Wealth Management</Typography>
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={2}>
-            <Box sx={{ ...DISPLAY_FLEX_ROW, ...{ width: "100%", alignItems: "flex-start", justifyContent: "space-between" } }}>
-              <Box sx={{ ...DISPLAY_FLEX_COLUMN, ...{ paddingBottom: "0px", alignItems: "flex-start", gap: "12px" } }}>
-                <Typography component={Link} to="/whyconsx" sx={linkStyle}>Why ConsX?</Typography>
-                <Typography component={Link} to="/demos" sx={linkStyle}>Demos</Typography>
-              </Box>
-              <Box sx={{ ...DISPLAY_FLEX_COLUMN, ...{ paddingBottom: "0px", alignItems: "flex-start", gap: "12px" } }}>
-                <Typography sx={{ color: "#FFF", fontFamily: "Source Sans Pro", fontSize: "16px", fontStyle: "normal", fontWeight: 400, lineHeight: "20px", cursor: 'pointer' }} onClick={handleOpen}>Request Demo</Typography>
-                <Typography sx={{ color: "#FFF", fontFamily: "Source Sans Pro", fontSize: "16px", fontStyle: "normal", fontWeight: 400, lineHeight: "20px", cursor: 'pointer' }}>Log in</Typography>
-              </Box>
-            </Box>
-          </Grid>
+        
           <Grid item xs={12} sm={12} md={12} lg={3}>
             <Box sx={{ ...DISPLAY_FLEX_COLUMN, ...{ alignItems: { lg: "flex-start", md: "center" }, gap: "32px" } }}>
               <Box sx={{ ...DISPLAY_FLEX_COLUMN, ...{ alignItems: "flex-start", maxWidth: "460px", gap: "16px" } }}>
-                <Typography sx={{ color: "#FFF", fontFamily: "Source Sans Pro", fontSize: "16px", fontStyle: "normal", fontWeight: 400, lineHeight: "20px" }}>Stay up to date on new features and releases</Typography>
+                <Typography sx={{ color: "#FFF", fontFamily: "Source Sans Pro", fontSize: "16px", fontStyle: "normal", fontWeight: 400, lineHeight: "20px" }}>Stay up to date on new articles</Typography>
                 <Box sx={{ ...DISPLAY_FLEX_ROW, ...{ alignItems: "flex-start", gap: "16px" } }}>
                   <Input placeholder="Enter your email*" type="email" sx={{ width: "60%", height: "40px", padding: "7.5px 16px", borderRadius: "6px", background: "#FFF" }} />
                   <SubscribeButton>Subscribe</SubscribeButton>
