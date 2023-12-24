@@ -343,17 +343,6 @@ function FormDialog({ open, onClose }) {
                 },
               }}
             >
-              <input
-                name="researchMethod"
-                onChange={handleInputChange}
-                type="text"
-                placeholder="Preferred Research Method"
-                required
-                style={{
-                  ...inputStylesTwo
-                }}
-                className="custom-input"
-              />
             </Box>
 
             <Box
@@ -365,17 +354,7 @@ function FormDialog({ open, onClose }) {
                 },
               }}
             >
-              <textarea
-                name="comments"
-                onChange={handleInputChange}
-                type="text"
-                placeholder="Additional Comments*"
-                required
-                style={{
-                  ...inputStylesTwo
-                }}
-                className="custom-input"
-              />
+            
             </Box>
           </Box>
 
@@ -433,17 +412,6 @@ function FormDialog({ open, onClose }) {
                   },
                 }}
               >
-                <textarea
-                  name="businessSummary"
-                  onChange={handleInputChange}
-                  type="text"
-                  placeholder="More info (if applicable)"
-                  required
-                  style={{
-                    ...inputStylesTwo
-                  }}
-                  className="custom-input"
-                />
               </Box>
 
               <Box
@@ -497,17 +465,6 @@ function FormDialog({ open, onClose }) {
                 },
               }}
             >
-              <input
-                name="competitors"
-                onChange={handleInputChange}
-                type="text"
-                placeholder="Additional Information"
-                required
-                style={{
-                  ...inputStylesTwo
-                }}
-                className="custom-input"
-              />
             </Box>
 
             <Box
@@ -534,7 +491,7 @@ function FormDialog({ open, onClose }) {
                 },
               }}
             >
-              <ButtonContained onClick={handleSubmit}>Request a Demo</ButtonContained>
+              <ButtonContained onClick={handleSubmit}>Schedule Appointment</ButtonContained>
             </Box>
           </Box>
         </Box>
