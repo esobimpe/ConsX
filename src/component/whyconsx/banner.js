@@ -69,7 +69,7 @@ function Banner() {
             color: "#FFFFFF",
           }}
         >
-          Discover ConsX - Empowering Your Business with Market Intelligence!
+          Discover ConsX - Empowering Your Finance with Quantitative Strategies and Risk Management!
         </Typography>
 
       </Box>
